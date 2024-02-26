@@ -15,7 +15,7 @@ const SelfProfile = () => {
     }
 
     return (
-        <div className="container my-4">
+        <div className="container my-4"> 
             <div className="row">
                 <div className="col-md-4 d-flex align-items-start">
                     {/* Ensure the image source matches the one you're using */}
