@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors());
-//app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'public')));
 //app.use(express.json()); // Built-in middleware for express to handle JSON payloads
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
