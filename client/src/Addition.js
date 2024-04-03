@@ -12,7 +12,7 @@ function Addition(){
 
     const handleBackEndAddition = async ()=>{
         try{
-            const response= await fetch('http://ec2-3-145-42-128.us-east-2.compute.amazonaws.com:8000/add', {
+            const response= await fetch('http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
