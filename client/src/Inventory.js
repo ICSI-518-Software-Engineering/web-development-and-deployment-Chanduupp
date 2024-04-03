@@ -20,7 +20,7 @@ const Inventory = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/products');
+            const response = await axios.get(`http://localhost:8000/products`);
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -29,7 +29,7 @@ const Inventory = () => {
 
     const deleteProduct = async (productId) => {
         try {
-            await axios.delete('http://localhost:8000/products/${productId}');
+            await axios.delete(`http://localhost:8000/products/${productId}`);
             fetchProducts();
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -73,7 +73,7 @@ const Inventory = () => {
         }
 
         try {
-            await axios.post('http://localhost:8000/products', formData, {
+            await axios.post(`http://localhost:8000/products`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -108,7 +108,7 @@ const Inventory = () => {
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put('http://localhost:8000/products/${editableProduct.id}', {
+            await axios.put(`http://localhost:8000/products/${editableProduct.id}`, {
                 name: editableProduct.name,
                 quantity: editableProduct.quantity,
             });
@@ -131,7 +131,7 @@ const Inventory = () => {
                     {products.map((product) => (
                         <Col key={product._id}>
                             <Card>
-                                <Card.Img variant="top" src={'data:image/jpeg;base64,${product.image}'} />
+                                <Card.Img variant="top" src={`data:image/jpeg;base64,${product.image}`} />
                                 <Card.Body>
                                     <Card.Title>{product.name}</Card.Title>
                                     <Card.Text>
