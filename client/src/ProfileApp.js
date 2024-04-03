@@ -14,8 +14,8 @@ function ProfileApp() {
     };
 
     const handleBackendAddition = async () => {
-        // Assume the server is running on localhost:8000
-        const response = await fetch('http://localhost:8000/add', {
+        // Assume the server is running on ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000
+        const response = await fetch('http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ number1: parseInt(number1), number2: parseInt(number2) }),

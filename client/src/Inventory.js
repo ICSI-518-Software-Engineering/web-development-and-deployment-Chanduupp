@@ -20,7 +20,7 @@ const Inventory = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/products`);
+            const response = await axios.get(`http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/products`);
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -29,7 +29,7 @@ const Inventory = () => {
 
     const deleteProduct = async (productId) => {
         try {
-            await axios.delete(`http://localhost:8000/products/${productId}`);
+            await axios.delete(`http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/products/${productId}`);
             fetchProducts();
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -73,7 +73,7 @@ const Inventory = () => {
         }
 
         try {
-            await axios.post(`http://localhost:8000/products`, formData, {
+            await axios.post(`http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/products`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -108,7 +108,7 @@ const Inventory = () => {
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8000/products/${editableProduct.id}`, {
+            await axios.put(`http://ec2-3-18-106-116.us-east-2.compute.amazonaws.com:8000/products/${editableProduct.id}`, {
                 name: editableProduct.name,
                 quantity: editableProduct.quantity,
             });
